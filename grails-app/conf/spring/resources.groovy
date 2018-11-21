@@ -1,7 +1,9 @@
 import sistematurnos.UserPasswordEncoderListener
-import sistematurnos.RoleGroupPasswordEncoderListener
+import sistematurnos.UserPasswordEncoderListener
+import sistematurnos.UserPasswordEncoderListener
 // Place your Spring DSL code here
 beans = {
     userPasswordEncoderListener(UserPasswordEncoderListener)
-    roleGroupPasswordEncoderListener(RoleGroupPasswordEncoderListener)
+    userPasswordEncoderListener(UserPasswordEncoderListener)
+    userPasswordEncoderListener(UserPasswordEncoderListener)
 }

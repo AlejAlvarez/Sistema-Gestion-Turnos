@@ -1,9 +1,10 @@
 
 
 // Added by the Spring Security Core plugin:
-grails.plugin.springsecurity.userLookup.userDomainClassName = 'sistematurnos.RoleGroup'
-grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'sistematurnos.RoleGroupRole'
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'sistematurnos.User'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'sistematurnos.UserRole'
 grails.plugin.springsecurity.authority.className = 'sistematurnos.Role'
+grails.plugin.springsecurity.logout.postOnly = false
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/',               access: ['permitAll']],
 	[pattern: '/error',          access: ['permitAll']],
@@ -30,8 +31,8 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 
 // Added by the Spring Security Core plugin:
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'sistematurnos.User'
-grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'sistematurnos.UserRoleGroup'
-grails.plugin.springsecurity.authority.className = 'sistematurnos.RoleGroup'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'sistematurnos.UserRole'
+grails.plugin.springsecurity.authority.className = 'sistematurnos.Role'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/',               access: ['permitAll']],
 	[pattern: '/error',          access: ['permitAll']],
