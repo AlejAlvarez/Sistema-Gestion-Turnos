@@ -4,19 +4,31 @@ import grails.plugin.springsecurity.annotation.Secured
 
 class IngresoSeguroController {
 
+    //CUENTA ADMIN: username: admin, password: admin
+    //CUENTA PACIENTE: username: paciente, password: paciente
+    @Secured(['ROLE_ADMIN', 'ROLE_RECEPCIONISTA', 'ROLE_MEDICO', 'ROLE_PACIENTE'])
     def index(){
-        render 'ACCEDER A /indexAdmin SI ES ADMINISTRADOR, O A /indexPaciente SI ES PACIENTE'
-        render 'CUENTA ADMIN: username: admin, password: admin'
-        render 'CUENTA PACIENTE: username: paciente, password: paciente'
+        if (isLoggedIn()){
+            def rol = getAuthenticatedUser().rol
+            switch(rol) {
+                case "admin":
+                    render 'AUTENTIFICADO COMO ADMINISTRADOR'
+                    break
+                case "paciente":
+                    render 'AUTENTIFICADO COMO PACIENTE'
+                    break
+                case "medico":
+                    render 'AUTENTIFICADO COMO MEDICO'
+                    break
+                case "recepcionista":
+                    render 'AUTENTIFICADO COMO RECEPCIONISTA'
+                    break
+            }
+        }
+        else{
+            render 'USTED NO POSEE NINGUN PERMISO'
+        }
+        
     }
 
-    @Secured('ROLE_ADMIN')
-    def indexAdmin() {
-        render 'AUTENTIFICADO COMO ADMINISTRADOR'    
-    }
-
-    @Secured('ROLE_PACIENTE')
-    def indexPaciente(){
-        render 'AUTENTIFICADO COMO PACIENTE'
-    }
 }
