@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Catamaran');
+    .navbar{
+      font-family: 'Catamaran', sans-serif;
+      font-size:medium;
+      font-weight: bold;
+    }
+    .navbar a{
+      color:black;
+    }
+    .navbar a:hover{
+      color:#21d192;  
+    }
+    #container-navbar{
+      -webkit-box-shadow: 0px 1.5px 4px 0px rgba(0,0,0,0.2);
+      -moz-box-shadow: 0px 1.5px 4px 0px rgba(0,0,0,0.2);
+      box-shadow: 0px 1.5px 4px 0px rgba(0,0,0,0.2);
+    }
+    .nav-item{
+     padding: 10px 0 10px 0;
+    }

@@ -1,9 +1,11 @@
 package sistematurnos
 
+import java.sql.Time
+
 class Turno {
-    
-    Date fechaReservada
+
     Date fechaRegistro
+    Time fechaAtencion
     String estado
     
     InformacionPaciente paciente

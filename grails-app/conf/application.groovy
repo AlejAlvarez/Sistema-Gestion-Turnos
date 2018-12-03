@@ -18,24 +18,27 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/error',          					access: ['permitAll']],
 	[pattern: '/index',          					access: ['permitAll']],
 	[pattern: '/ingresoSeguro/index',   			access: ['permitAll']],
-	[pattern: '/index.gsp',      					access: ['permitAll']],
+	[pattern: '/indexControllers',      			access: ['permitAll']],
 	[pattern: '/shutdown',       					access: ['permitAll']],
-	[pattern: '/dbconsole/**',       		access: ['ROLE_ADMIN']],
+	[pattern: '/dbconsole/**',       		        access: ['ROLE_ADMIN']],
 	[pattern: '/user/**',        					access: ['ROLE_ADMIN']],
 	[pattern: '/turno/**',       					access: ['ROLE_ADMIN', 'ROLE_PACIENTE']],
 	[pattern: '/sobreturno/**',    					access: ['ROLE_ADMIN', 'ROLE_PACIENTE']],
 	[pattern: '/turnoCancelado/**',					access: ['ROLE_ADMIN', 'ROLE_PACIENTE']],
 	[pattern: '/obraSocial/**',    					access: ['ROLE_ADMIN', 'ROLE_PACIENTE']],
 	[pattern: '/informacionUsuario/**',       		access: ['ROLE_ADMIN']],
+	[pattern: '/informacionAdministrador/**',       access: ['ROLE_ADMIN']],
+	[pattern: '/informacionRecepcionista/**',       access: ['ROLE_ADMIN','ROLE_RECEPCIONISTA']],
 	[pattern: '/informacionMedico/**',       		access: ['ROLE_ADMIN', 'ROLE_MEDICO']],
 	[pattern: '/especialidad/**',       			access: ['ROLE_ADMIN', 'ROLE_MEDICO']],
-	[pattern: '/informacionPaciente/**',			access: ['ROLE_ADMIN', 'ROLE_PACIENTE', 'ROLE_RECEPCIONISTA']],       
+	[pattern: '/informacionPaciente/**',			access: ['ROLE_ADMIN', 'ROLE_PACIENTE', 'ROLE_RECEPCIONISTA']],
 	[pattern: '/horarioLaboral/**',					access: ['ROLE_ADMIN', 'ROLE_MEDICO']],
 	[pattern: '/assets/**',      					access: ['permitAll']],
 	[pattern: '/**/js/**',       					access: ['permitAll']],
 	[pattern: '/**/css/**',      					access: ['permitAll']],
 	[pattern: '/**/images/**',   					access: ['permitAll']],
-	[pattern: '/**/favicon.ico', 					access: ['permitAll']]
+	[pattern: '/**/favicon.ico', 					access: ['permitAll']],
+	[pattern: '/indexControllers/**',				access: ['ROLE_ADMIN']]
 ]
 
 grails.plugin.springsecurity.filterChain.chainMap = [

@@ -12,7 +12,8 @@ class IngresoSeguroController {
             def rol = getAuthenticatedUser().rol
             switch(rol) {
                 case "admin":
-                    render 'AUTENTIFICADO COMO ADMINISTRADOR'
+                    // acá debería renderizar una página que diga que es admin y redireccionar a la página de indexControllers
+                    render(view:"/indexControllers")
                     break
                 case "paciente":
                     render 'AUTENTIFICADO COMO PACIENTE'

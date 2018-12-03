@@ -19,6 +19,7 @@ class InformacionPacienteController {
     }
 
     def create() {
+        // en este controller se tiene que crear también con los fields de informacionUsuario
         respond new InformacionPaciente(params)
     }
 
