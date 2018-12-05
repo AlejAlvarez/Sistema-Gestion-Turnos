@@ -6,6 +6,7 @@ import static org.springframework.http.HttpStatus.*
 class InformacionPacienteController {
 
     InformacionPacienteService informacionPacienteService
+    UserService userService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
@@ -24,13 +25,22 @@ class InformacionPacienteController {
     }
 
     def save(InformacionPaciente informacionPaciente) {
+         println params.nombreUsuario
+        // este nombreUsuario debe crear un nuevo usuario y relacionarlo con esta información
         if (informacionPaciente == null) {
             notFound()
             return
         }
 
         try {
+            // guardo la informacionPaciente
             informacionPacienteService.save(informacionPaciente)
+            User nuevoUsuario = new User(username: params.nombreUsuario,info:informacionPaciente,password: params.contrasena)
+           // guardo el nuevo usuario
+                 nuevoUsuario.rol = "paciente"
+                 nuevoUsuario.save()
+            // guardo el userRole
+            UserRole ur = UserRole.
         } catch (ValidationException e) {
             respond informacionPaciente.errors, view:'create'
             return

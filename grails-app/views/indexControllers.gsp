@@ -5,6 +5,7 @@
     <title>Welcome to Grails</title>
 </head>
 <body>
+ <div class="container-fluid">
     <content tag="nav">
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Application Status <span class="caret"></span></a>
@@ -72,6 +73,6 @@
             </div>
         </section>
     </div>
-
+ </div>
 </body>
 </html>

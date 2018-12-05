@@ -25,8 +25,18 @@
                 </g:eachError>
             </ul>
             </g:hasErrors>
-            <g:form resource="${this.informacionPaciente}" method="POST">
-                <fieldset class="form">
+            <g:form class="form-control" resource="${this.informacionPaciente}"  method="POST" action="save">
+                <div class="form-row">
+                  <div class="col">
+                    <label for="nombreUsuario">Nombre de Usuario</label>
+                    <g:textField name="nombreUsuario" class="form-control" value="" required="true"/>
+                  </div>
+                  <div class="col">
+                    <label for="contrasena">Contraseña</label>
+                    <g:textField name="contrasena" class="form-control" value="" required="true" />
+                  </div>
+                </div>
+                <fieldset>
                     <f:all bean="informacionPaciente"/>
                 </fieldset>
                 <fieldset class="buttons">

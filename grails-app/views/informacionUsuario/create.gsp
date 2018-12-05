@@ -33,7 +33,6 @@
             </g:hasErrors>
             <g:form resource="${this.informacionUsuario}" method="POST">
                 <fieldset class="form">
-
                     <f:all bean="informacionUsuario" />
                 </fieldset>
                 <!-- submitButton del form de información usuario -->
@@ -56,7 +55,7 @@
         $(document).ready(function(){
             $("#options").change(function(){
                 $(".content1").addClass("hidden");
-                $("#content1-"+$(this).val()).removeClass("hidden");
+                $("#content1-"  +$(this).val()).removeClass("hidden");
             });
         });
     </script>
